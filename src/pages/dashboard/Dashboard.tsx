@@ -6,8 +6,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card.tsx";
-import {Transactions} from "@/pages/dashboard/components/transactions.tsx";
-import {Overview} from "@/pages/dashboard/components/overview.tsx";
+import {
+  Transactions,
+  Overview,
+} from "@/pages/dashboard/components/transactions.tsx";
 
 // TODO: data fetching
 export const Dashboard: FC = () => {
