@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { Input } from "@/components/ui/input";
 import {
   Card,
   CardContent,
@@ -9,7 +8,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Label } from "@radix-ui/react-label";
 import loginImage from "../../assets/login.jpg";
 import { Link } from "react-router-dom";
 
