@@ -82,8 +82,8 @@ export const Login: FC = () => (
       </CardFooter>
     </Card>
     <Card className="w-[50%]" style={{border: "none"}}>
-      <CardContent style={{ width: "600px", marginTop:"26%"  }}>
-        <img src={loginImage} style={{ width: "800px", height: "750px", objectFit: "contain", marginBottom:"23%"}} />
+      <CardContent style={{ width: "600px"  }}>
+        <img src={loginImage} style={{ width: "800px", height: "500px", objectFit: "contain", float:"left"}} />
       </CardContent>
     </Card>
   </div>
