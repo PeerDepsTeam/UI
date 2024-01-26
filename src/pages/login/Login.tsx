@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import loginImage from "../../assets/login.jpg";
+import loginImage from "../../assets/login.png";
 import { Link } from "react-router-dom";
 
 export const Login: FC = () => (
@@ -24,6 +24,7 @@ export const Login: FC = () => (
     display: "flex",
     flexDirection: "row",
     borderRadius:"20px",
+    overflow:"hidden",
     gap: "12%"
   }}>
     <Card className="w-[50%]" style={{ width: "50%", height: "100%", border: "none" }}>
@@ -33,15 +34,17 @@ export const Login: FC = () => (
         color:'#ddc8e0',
         fontSize:"60px"
         }}>EDUC-FI .</h1>
+        <hr style={{color:'purple', width:"100px", marginLeft:"5%"}}/>
       <CardHeader>
         <CardTitle style={{
           fontSize: "x-large",
           fontWeight:"normal",
           marginBottom:"20px"
-        }}>FIND THE BEST <br/>
-        WAY TO TEACH YOUR KIDS TO <br/>
-        ECONOMIZE IN THE REAL LIFE USING THIS <br/>
-        PLATFORM .
+        }}>
+        THE MOST EFFECTIVE <br/>
+        WAY TO TEACH YOUR KIDS <br/>
+        HOW TO SAVE MONEY IN REAL LIFE <br/>
+        IS BY USING THIS PLATFORM.
         </CardTitle>
         <CardDescription>
           La solution pour l'éducation financière de vos enfants.
@@ -79,8 +82,8 @@ export const Login: FC = () => (
       </CardFooter>
     </Card>
     <Card className="w-[50%]" style={{border: "none"}}>
-      <CardContent style={{ width: "100%", height: "100%" }}>
-        <img src={loginImage} style={{ width: "600px", height: "550px", objectFit: "contain" }} />
+      <CardContent style={{ width: "600px", marginTop:"26%"  }}>
+        <img src={loginImage} style={{ width: "800px", height: "750px", objectFit: "contain", marginBottom:"23%"}} />
       </CardContent>
     </Card>
   </div>
