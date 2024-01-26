@@ -63,19 +63,17 @@ export const Signup: FC = () => {
                 <Label htmlFor="birthdate">Birthdate</Label>
                 <Input id="birthdate" required type="date" />
               </div>
-              <Button className="w-full" type="submit">
-                Sign Up
-              </Button>
-            </div>
-            <Separator className="my-8" />
-            <div className="space-y-4">
               <Button
                 className="flex w-full items-center justify-center space-x-2"
                 variant="outline"
+                type="submit"
               >
                 <GoogleIcon />
                 <span>Sign up with Google</span>
               </Button>
+            </div>
+            <Separator className="my-8" />
+            <div className="space-y-4">
               <div className="mt-4 text-center text-sm">
                 Already have an account?
                 <a className="underline" href="/login">
