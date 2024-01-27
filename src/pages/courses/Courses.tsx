@@ -1,7 +1,13 @@
-import {Cards} from "@/components/common/card";
-import {Alert, AlertDescription, AlertTitle} from "@/components/ui/alert";
-import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
-import {Button} from "@/components/ui/button";
+import {FC, useEffect, useState} from "react";
+import {Link} from "react-router-dom";
+import {motion} from "framer-motion";
+import {LockIcon, UnlockIcon} from "lucide-react";
+import {
+  GearIcon,
+  ReaderIcon,
+  RocketIcon,
+  StarIcon,
+} from "@radix-ui/react-icons";
 import {
   Card,
   CardContent,
@@ -9,20 +15,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  GearIcon,
-  ReaderIcon,
-  RocketIcon,
-  StarIcon,
-} from "@radix-ui/react-icons";
-import {FC, useEffect, useState} from "react";
-import {ActivityProvider} from "../../services/api/providers/activity_provider";
-import {Course} from "@/sevices/api/gen/";
-import {motion} from "framer-motion";
-import {UserProvider} from "@/services/api";
-import {User} from "@/services/api/gen";
-import {Link} from "react-router-dom";
-import {LockIcon, Unlock, UnlockIcon} from "lucide-react";
+import {Cards} from "@/components/common/card";
+import {Button} from "@/components/ui/button";
+import {Alert, AlertDescription, AlertTitle} from "@/components/ui/alert";
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
+import {User, Course} from "@/services/api/gen";
+import {ActivityProvider, UserProvider, DEFAULT_QUERY} from "@/services/api";
 
 const colors = [
   "#3559E0",
@@ -45,15 +43,18 @@ const colors = [
 export const Courses: FC = () => {
   const [courses, setCourses] = useState<Course[]>([]);
   const [users, setUsers] = useState<User[]>([]);
-  const [isAuthetincated, setIsAuthenticated] = useState(false);
+  // FIXME: dynamically handle
+  const isAuthenticated = false;
 
   useEffect(() => {
     const fetch = async () => {
-      const courses = await ActivityProvider.getMany({page: 1, pageSize: 20});
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      const courses = await ActivityProvider.getMany(DEFAULT_QUERY);
       setCourses(courses.data);
     };
     const fetchUser = async () => {
-      const users = await UserProvider.getMany();
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      const users = await UserProvider.getMany(DEFAULT_QUERY);
       console.log(users);
 
       setUsers(users.data);
@@ -111,7 +112,7 @@ export const Courses: FC = () => {
         <div className="text-violet-800">{new Date().toUTCString()}</div>
         {courses.map((course, k) => (
           <div className="my-2">
-            {isAuthetincated ? (
+            {isAuthenticated ? (
               <Link to={`/courses/${course.id}`}>
                 <Cards course={course} color={colors[k]}>
                   <UnlockIcon />
@@ -146,11 +147,7 @@ export const Courses: FC = () => {
                     <Avatar>
                       <AvatarImage src="/avatars/01.png" />
                       <AvatarFallback>
-                        {(
-                          user.firstName[k] +
-                          " " +
-                          user.lastName[k]
-                        ).toUpperCase()}
+                        {(user.firstName + " " + user.lastName).toUpperCase()}
                       </AvatarFallback>
                     </Avatar>
                     <div>
@@ -163,7 +160,11 @@ export const Courses: FC = () => {
                     </div>
                   </div>
                   <div>
-                    {Math.round(Number.parseFloat(user.budget?.currentCapital))}
+                    {Math.round(
+                      Number.parseFloat(
+                        String(user.budget?.currentCapital ?? 0)
+                      )
+                    )}
                   </div>
                   <StarIcon className="ml-2 h-4 w-4 text-muted-foreground text-yellow-500" />
                 </div>
