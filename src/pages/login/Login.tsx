@@ -8,13 +8,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import loginImage from "../../assets/background.png";
+import loginImage from "../../assets/back.jpg";
 import { Link } from "react-router-dom";
 
 const Login: FC = () => (
-  <div className="h-screen flex justify-center items-center">
-    <div className="w-[30%] mx-auto" style={{ marginLeft: "15%" }}>
-      <Card className="w-full h-full border-none shadow-none">
+  <div className="h-screen flex justify-center items-center bg-gradient-to-br from-violet-100 to-pink-200 to-white-900 via-violet-300">
+    <Card className="w-[1000px] flex flex-row border-none shadow-none mx-auto">
+      <Card className= "w-[60%] border-none shadow-none mx-auto bg-transparent" style={{marginTop:"1%", backgroundColor:"transparent"}}>  
         <h1 className="ml-4 font-bold text-purple-400 text-6xl">EDUC-FI .</h1>
         <br />
         <hr className="text-purple-400 w-16 ml-5" />
@@ -31,7 +31,7 @@ const Login: FC = () => (
             while interacting with simulations in the form of quizzes.
           </CardDescription>
         </CardHeader>
-        <CardContent style={{ width: "500px" }}>
+        <CardContent className="w-[100%]">
           <div className="flex justify-between mt-4">
             <Button
               variant="outline"
@@ -63,13 +63,14 @@ const Login: FC = () => (
                 height="fit-content"
                 viewBox="0 0 48 48"
               >
-                {/* ...Facebook icon paths... */}
+                <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path>
+                <path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
               </svg>
               Login with Facebook
             </Button>
           </div>
         </CardContent>
-        <CardFooter className="flex justify-between mt-4">
+        <CardFooter className="flex justify-between mt-3">
           <Button variant="outline" className="btn-previous">
             &lt;
           </Button>
@@ -80,19 +81,17 @@ const Login: FC = () => (
           </small>
         </CardFooter>
       </Card>
-    </div>
 
-    <div className="w-[70%] mx-auto">
-    <Card className="w-full border-none shadow-none">
-      <CardContent style={{ width: "800px", backgroundColor: 'transparent' }}>
+    <Card className="w-[50%] border-none shadow-none mx-auto" style={{backgroundColor: 'transparent' }}>
+      <CardContent style={{width:"550px",backgroundColor: 'transparent' , marginLeft:"4%"}}>
         <img
           src={loginImage}
-          className="w-100 h-80 object-contain float-left"
-          style={{ width: "700px", height: "700px", backgroundColor: 'transparent' }}
+          className="w-[900px] h-[80%] object-contain float-left"
+          style={{ width: "100%", height: "500px", backgroundColor: 'transparent', borderRadius:"12px"}}
         />
       </CardContent>
     </Card>
-    </div>
+    </Card>
   </div>
 );
 
