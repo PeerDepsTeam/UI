@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { GearIcon, ReaderIcon, RocketIcon, StarIcon } from "@radix-ui/react-icons"
 import { FC, useEffect, useState } from "react";
 
-const colors = ["#2ECC71", "#F0DE36", "#3498DB", "#E74C3C", "#9B59B6", "#2ECC71", "#F39C12", "#8E44AD", "#1ABC9C", "#D35400", "#C0392B", "#27AE60", "#2980B9", "#E67E22", "#16A085"];;
+const colors = ["#3559E0", "#A66CFF", "#FAEA48", "#DF826C", "#9B59B6", "#2ECC71", "#F39C12", "#8E44AD", "#1ABC9C", "#D35400", "#C0392B", "#27AE60", "#2980B9", "#E67E22", "#16A085"];;
 
 
 export const Courses : FC = ()=>{
@@ -36,7 +36,7 @@ export const Courses : FC = ()=>{
                         </Button></div>
                 </div>
                 <div>
-                    <Alert className="bg-gray-900 p-4 text-white">
+                    <Alert className="bg-[#332941] p-4 text-white">
                         <RocketIcon className="h-4 w-4" color="white"/>
                         <AlertTitle>Heads up!</AlertTitle>
                         <AlertDescription>
@@ -57,7 +57,7 @@ export const Courses : FC = ()=>{
             }
             </div>
             <div className="w-96 m-12">
-                <Card className="w-full">
+                <Card className="w-full bg-[#EDEDED] bg-opacity-35 border border[#EDEDED] border-opacity-50">
                     <CardHeader>
                         <CardTitle>Users Ranking</CardTitle>
                         <CardDescription>
