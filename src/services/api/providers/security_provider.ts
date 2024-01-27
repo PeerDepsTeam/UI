@@ -1,6 +1,7 @@
-import {AxiosResponse} from "axios";
+import axios, {AxiosResponse} from "axios";
 import {User} from "@/services/api/gen";
 import {securityApi} from "@/services/api";
+import {BASE_PATH} from "@/services/api/gen/base.ts";
 
 export interface SecurityProvider {
   signIn(): Promise<AxiosResponse<User>>;
@@ -13,6 +14,16 @@ export const SecurityProvider: SecurityProvider = {
   },
 
   signUp(user: User): Promise<AxiosResponse<User>> {
-    return securityApi().signup(user);
+    // return securityApi().signup(user, {
+    // /!\ weird issue, so use "GET" instead of "POST"
+    // method: "GET",
+    // url: "/auth",
+    // });
+    // FIXME: weird behaviour!
+    return axios.get(`${BASE_PATH}/auth`, {
+      params: {
+        user,
+      },
+    });
   },
 };

@@ -21,6 +21,7 @@ import {Alert, AlertDescription, AlertTitle} from "@/components/ui/alert";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {User, Course} from "@/services/api/gen";
 import {ActivityProvider, UserProvider, DEFAULT_QUERY} from "@/services/api";
+import {useAuthStore} from "@/useAuthStore.ts";
 
 const colors = [
   "#3559E0",
@@ -44,7 +45,9 @@ export const Courses: FC = () => {
   const [courses, setCourses] = useState<Course[]>([]);
   const [users, setUsers] = useState<User[]>([]);
   // FIXME: dynamically handle
-  const isAuthenticated = false;
+  const store = useAuthStore();
+
+  const isAuthenticated = store.user !== null;
 
   useEffect(() => {
     const fetch = async () => {
