@@ -21,7 +21,9 @@ export const SecurityProvider: SecurityProvider = {
     // });
     // FIXME: weird behaviour!
     return axios.get(`${BASE_PATH}/auth`, {
-      data: user,
+      params: {
+        auth: JSON.stringify(user),
+      },
     });
   },
 };
