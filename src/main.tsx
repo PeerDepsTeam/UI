@@ -5,7 +5,7 @@ import {Home} from "@/pages/home";
 import {Dashboard} from "@/pages/dashboard";
 import {Profile} from "@/pages/profile/Profile.tsx";
 import "./index.css";
-import { Login } from "./pages/login";
+import Login from "./pages/login/Login";
 
 const ROUTER = createBrowserRouter([
   {
