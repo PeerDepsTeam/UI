@@ -48,14 +48,14 @@ export const Signup: FC = () => {
             <p className="px-8 text-center text-sm text-muted-foreground">
               By clicking continue, you agree to our{" "}
               <a
-                href="/terms"
+                href="#"
                 className="underline underline-offset-4 hover:text-primary"
               >
                 Terms of Service
               </a>{" "}
               and{" "}
               <a
-                href="/privacy"
+                href="#"
                 className="underline underline-offset-4 hover:text-primary"
               >
                 Privacy Policy

@@ -7,6 +7,7 @@ import {LearnCourse} from "@/pages/course";
 import {Profile} from "@/pages/profile/Profile.tsx";
 import Login from "@/pages/login/Login";
 import {Signup} from "./pages/signup";
+import {Authenticated} from "@/layout/Authenticated.ts";
 import {Courses} from "./pages/courses";
 import "./index.css";
 
@@ -17,11 +18,19 @@ const ROUTER = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <Authenticated>
+        <Dashboard />
+      </Authenticated>
+    ),
   },
   {
     path: "/profile",
-    element: <Profile />,
+    element: (
+      <Authenticated>
+        <Profile />
+      </Authenticated>
+    ),
   },
   {
     path: "/signin",
