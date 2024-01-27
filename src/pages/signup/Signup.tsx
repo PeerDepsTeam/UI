@@ -35,7 +35,7 @@ export const Signup: FC = () => {
                     <div className="space-y-4">
                       <div className="mt-4 text-center text-sm">
                         Already have an account?
-                        <a className="underline" href="/signin">
+                        <a className="underline" href="/">
                           Login
                         </a>
                       </div>
