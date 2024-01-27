@@ -4,11 +4,17 @@ import {Layout} from "@/layout";
 import {User} from "@/services/api/gen";
 import AvatarLogged from "../../assets/profile-login.png";
 import {Card} from "@/components/ui/card";
+import {useAuthStore} from "@/useAuthStore.ts";
+import {format} from "date-fns";
 
-export const Profile: FC = (props: User) => {
+export const Profile: FC = () => {
+  const {user} = useAuthStore();
+
+  if (!user) return null;
+
   return (
     <Layout>
-      <ProfileLayout profile={props} />
+      <ProfileLayout profile={user} />
     </Layout>
   );
 };
@@ -45,10 +51,12 @@ const ProfileLayout: FC<ProfileLayoutProps> = ({profile}) => {
             <small className="text-gray-400">Email:</small>
             <p>{profile.email}</p>
           </Card>
-          <Card className="flex flex-col border-none p-4">
-            <small className="text-gray-400">Birthday:</small>
-            <p>{profile.birthdate?.toLocaleDateString()}</p>
-          </Card>
+          {profile.birthdate && (
+            <Card className="flex flex-col border-none p-4">
+              <small className="text-gray-400">Birthday:</small>
+              <p>{format(profile.birthdate, "PPP")}</p>
+            </Card>
+          )}
           <Card className="flex flex-col border-none p-4">
             <small className="text-gray-400">Sex:</small>
             <p>{profile.sex}</p>

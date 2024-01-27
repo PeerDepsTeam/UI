@@ -74,8 +74,9 @@ export const AuthProvider = new (class Provider implements AuthProvider {
   private signUp(
     user: User,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    _credential: UserCredential
+    credential: UserCredential
   ): Promise<AxiosResponse<User>> {
+    user.email = credential.user.email!;
     return SecurityProvider.signUp(user);
   }
 

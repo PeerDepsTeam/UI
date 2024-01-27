@@ -30,6 +30,7 @@ import {RadioGroup, RadioGroupItem} from "@/components/ui/radio-group.tsx";
 import {AuthProvider} from "@/services/security";
 import {User} from "@/services/api/gen";
 import {useAuthStore} from "@/useAuthStore.ts";
+import {useNavigate} from "react-router-dom";
 
 // Define the Zod schema for form validation
 const schema = z.object({
@@ -45,6 +46,7 @@ type FormData = z.infer<typeof schema>;
 
 const SignUpForm: React.FC = () => {
   const store = useAuthStore();
+  const navigate = useNavigate();
 
   const form = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -68,6 +70,7 @@ const SignUpForm: React.FC = () => {
         await AuthProvider.signUpWithProvider(GoogleAuthProvider, user)
       ).data;
       store.setUser(created);
+      navigate("/dashboard");
     } catch (e) {
       // TODO: handle error
     }
