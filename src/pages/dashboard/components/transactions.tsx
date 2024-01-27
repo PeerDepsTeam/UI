@@ -1,30 +1,26 @@
 import {FC, useMemo} from "react";
 import {format} from "date-fns";
-import {Money} from "@/pages/dashboard/components/money.tsx";
 import {CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis} from "recharts";
+import {Transaction} from "@/services/api/gen";
+import {Money} from "@/pages/dashboard/components/money.tsx";
 
 export interface TransactionsProps {
-  transactions: Array<{
-    label: string;
-    createDatetime: Date;
-    type: "INCOME" | "OUTCOME";
-    amount: number;
-  }>;
+  transactions: Array<Required<Transaction>>;
 }
 
 export const Transactions: FC<TransactionsProps> = ({transactions = []}) => {
   return (
     <div className="h-[35rem] space-y-8 overflow-y-auto">
-      {transactions.map(({label, createDatetime, type, amount}) => {
+      {transactions.map(({creationDatetime, amount, id, type}) => {
         return (
           <div
             className="flex cursor-pointer items-center justify-between space-x-2 border border-gray-100 p-3 hover:bg-gray-50"
-            key={`${label}-${createDatetime.toLocaleDateString()}`}
+            key={id}
           >
             <div className="ml-4 space-y-1">
-              <p className="text-sm font-medium leading-none">{label}</p>
+              <p className="text-sm font-medium leading-none">TRS-REF-{id}</p>
               <p className="text-sm text-muted-foreground">
-                {format(createDatetime, "LLL dd, y")}
+                {format(creationDatetime, "LLL dd, y")}
               </p>
             </div>
             <Money amount={amount} type={type} />
@@ -36,12 +32,7 @@ export const Transactions: FC<TransactionsProps> = ({transactions = []}) => {
 };
 
 export interface OverviewProps {
-  transactions: Array<{
-    label: string;
-    createDatetime: Date;
-    type: "INCOME" | "OUTCOME";
-    amount: number;
-  }>;
+  transactions: Array<Required<Transaction>>;
 }
 
 const formatData = (data: OverviewProps["transactions"]) => {
