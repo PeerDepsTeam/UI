@@ -1,5 +1,4 @@
 import {FC, PropsWithChildren, ReactNode} from "react";
-import {Home, LayoutDashboard} from "lucide-react";
 import {clsx} from "clsx";
 import {HEADER_HEIGHT, MAIN_HEIGHT} from "@/layout/constants.ts";
 import {DefaultAppBar} from "@/layout/DefaultAppBar.tsx";
