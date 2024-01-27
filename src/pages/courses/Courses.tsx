@@ -10,8 +10,8 @@ const colors = ["#3559E0", "#A66CFF", "#FAEA48", "#DF826C", "#9B59B6", "#2ECC71"
 
 
 export const Courses : FC = ()=>{
-    const [courses, setCourses] = useState<number[]>([5, 5, 5, 5]);
-    const [users, setUsers] = useState([1, 2, 3, 4, 5, 6, 7])
+    const [courses] = useState<number[]>([5, 5, 5, 5]);
+    const [users] = useState([1, 2, 3, 4, 5, 6, 7])
 
     useEffect(()=>{
         //setCourses([5])
@@ -51,7 +51,7 @@ export const Courses : FC = ()=>{
             {
                 courses.map((course, k)=>(
                     <div className="my-2">
-                        <Cards color={colors[k]}/>
+                        <Cards course= {course} color={colors[k]}/>
                     </div>
                 ))
             }
@@ -66,8 +66,8 @@ export const Courses : FC = ()=>{
                     </CardHeader>
                     <CardContent className="grid gap-6">
                       {
-                        users.map((user, k)=>(
-                            <div className="flex items-center justify-between space-x-4">
+                        users.map((_user, k)=>(
+                            <div key= {k} className="flex items-center justify-between space-x-4">
                                 <div className="flex items-center space-x-4">
                                     <Avatar>
                                     <AvatarImage src="/avatars/01.png" />
