@@ -15,7 +15,7 @@ export interface NavProps {
     title: string;
     label?: string;
     to: string;
-    icon: LucideIcon;
+    icon: FC;
     variant: "default" | "ghost";
   }[];
 }
