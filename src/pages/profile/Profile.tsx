@@ -24,20 +24,23 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover.tsx";
+import {Layout} from "@/layout";
 import {cn} from "@/lib/utils.ts";
 
 export const Profile: FC = () => {
   return (
-    <ProfileLayout
-      profile={{
-        firstname: "first",
-        lastname: "last",
-        username: "first",
-        birthdate: new Date(),
-        sex: "M",
-        email: "dummy@gmail.com",
-      }}
-    />
+    <Layout>
+      <ProfileLayout
+        profile={{
+          firstname: "first",
+          lastname: "last",
+          username: "first",
+          birthdate: new Date(),
+          sex: "M",
+          email: "dummy@gmail.com",
+        }}
+      />
+    </Layout>
   );
 };
 

@@ -22,5 +22,7 @@ module.exports = {
       {allowConstantExport: true},
     ],
     "@typescript-eslint/no-explicit-an": ["off"],
+    "@typescript-eslint/no-unsafe-assignment": ["off"],
+    "@typescript-eslint/no-unsafe-member-access": ["off"],
   },
 };
