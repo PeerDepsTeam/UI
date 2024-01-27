@@ -6,7 +6,7 @@ import {
   type UserCredential,
 } from "firebase/auth";
 import {auth} from "@/config/firebase.ts";
-import {User} from "@/services/api/gen";
+import {Configuration, User} from "@/services/api/gen";
 import {SecurityProvider} from "@/services/api";
 import {AxiosResponse} from "axios";
 
@@ -28,6 +28,8 @@ export interface AuthProvider {
   logOut(): Promise<void>;
 
   getCurrentUser(): Promise<FUser | null>;
+
+  getCachedAuthConf(): Configuration | undefined;
 }
 
 /**
@@ -87,5 +89,12 @@ export const AuthProvider = new (class Provider implements AuthProvider {
 
   private _cacheIdToken(idToken: string) {
     return localStorage.setItem(Provider.AUTH_ID_TOKEN_KEY, idToken);
+  }
+
+  getCachedAuthConf(): Configuration | undefined {
+    const token = localStorage.getItem(Provider.AUTH_ID_TOKEN_KEY);
+    return new Configuration({
+      accessToken: token ?? "",
+    });
   }
 })();
