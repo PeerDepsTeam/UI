@@ -1,19 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {RouterProvider, createBrowserRouter} from "react-router-dom";
-import {Home} from "@/pages/home";
 import {Dashboard} from "@/pages/dashboard";
 import {LearnCourse} from "@/pages/course";
 import {Profile} from "@/pages/profile/Profile.tsx";
-import Login from "@/pages/login/Login";
 import {Signup} from "./pages/signup";
 import {Courses} from "./pages/courses";
 import "./index.css";
+import Login from "./pages/login/Login";
 
 const ROUTER = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Login />,
   },
   {
     path: "/dashboard",
@@ -22,10 +21,6 @@ const ROUTER = createBrowserRouter([
   {
     path: "/profile",
     element: <Profile />,
-  },
-  {
-    path: "/signin",
-    element: <Login />,
   },
   {
     path: "/signup",
