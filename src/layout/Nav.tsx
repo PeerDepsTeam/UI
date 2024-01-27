@@ -39,8 +39,8 @@ export function Nav({links, isCollapsed}: NavProps) {
                       "white:hover:text-dark dark:text-muted-foreground dark:hover:bg-muted"
                   )}
                 >
-                  <link.icon className="h-5 w-5" />
-                  <span className="sr-only">{link.title}</span>
+                  <link.icon />
+                  <span className="sr-only ">{link.title}</span>
                 </Link>
               </TooltipTrigger>
               <TooltipContent side="right" className="flex items-center gap-4">
@@ -63,7 +63,7 @@ export function Nav({links, isCollapsed}: NavProps) {
                 "justify-start"
               )}
             >
-              <link.icon className="mr-2 h-4 w-4" />
+              <link.icon />
               {link.title}
               {link.label && (
                 <span
