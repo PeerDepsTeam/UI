@@ -29,7 +29,7 @@ export function Nav({links, isCollapsed}: NavProps) {
       <nav className=" flex grid flex-row items-start gap-10 bg-yellow-50 px-2 group-[[data-collapsed=true]]:justify-center group-[[data-collapsed=true]]:px-2">
         {links.map((link, index) =>
           isCollapsed ? (
-            <Tooltip key={index} delayDuration={0}>
+            <Tooltip key={index} delayDuration={0} cla>
               <TooltipTrigger asChild>
                 <Link
                   to={link.to}

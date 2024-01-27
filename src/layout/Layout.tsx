@@ -33,7 +33,7 @@ const MainWrapper: FC<PropsWithChildren> = ({children}) => {
         height: MAIN_HEIGHT,
       }}
     >
-      <div className="w-1/4 bg-yellow-50">
+      <div className="w-1/6 bg-yellow-50">
         <Nav
           isCollapsed={false}
           links={[
