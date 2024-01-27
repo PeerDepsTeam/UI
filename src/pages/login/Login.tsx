@@ -9,7 +9,6 @@ import {
 import {Button} from "@/components/ui/button";
 import loginImage from "../../assets/back.jpg";
 import {Link} from "react-router-dom";
-import {Separator} from "@/components/ui/separator";
 import arrowLeft from "../../assets/icone.gif";
 
 const Login: FC = () => (
@@ -51,13 +50,8 @@ const Login: FC = () => (
             >
               <Link to={"/signup"}>SIGN UP</Link>
             </Button>
-            <div className="flex flex-row justify-between align-middle">
-              <Separator orientation="vertical" className="z-30 w-[30px]" />
+            <div className="flex flex-row justify-center align-middle mb-5">
               <small> OR </small>
-              <Separator
-                orientation="vertical"
-                className="z-30 mt-10 w-[30px]"
-              />
             </div>
             <Button
               variant="outline"
