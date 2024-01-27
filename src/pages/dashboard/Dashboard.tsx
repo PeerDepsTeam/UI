@@ -16,51 +16,40 @@ import {
 export const Dashboard: FC = () => {
   return (
     <Layout>
-      <div className="flex-1 space-y-4 p-8 pt-6">
+      <div className="flex-1 space-y-4 p-8 pt-6 mb-2">
         <div className="flex items-center justify-between space-y-2">
           <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
           <div className="flex items-center space-x-2">View date</div>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <Card>
+          <Card className=" bg-[#EF4040]">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
+              <CardTitle className="text-sm font-medium text-white">
                 Initial capital
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">$45,231.89</div>
+              <div className="text-2xl font-bold text-white">$45,231.89</div>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="bg-[#33BBC5]">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Capital</CardTitle>
+              <CardTitle className="text-sm font-medium text-white">Current Capital</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">$45,231.89</div>
-              <p className="text-xs text-muted-foreground">current</p>
+              <div className="text-2xl font-bold text-white">$45,231.89</div>
+
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="bg-[#A084E8]">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Capital</CardTitle>
+              <CardTitle className="text-sm font-medium text-white">Savings</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">$45,231.89</div>
-              <p className="text-xs text-muted-foreground">current</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Capital</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">$45,231.89</div>
-              <p className="text-xs text-muted-foreground">current</p>
+              <div className="text-2xl font-bold text-white">$45,231.89</div>
             </CardContent>
           </Card>
         </div>
