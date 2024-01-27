@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import {RouterProvider, createBrowserRouter} from "react-router-dom";
 import {Home} from "@/pages/home";
 import {Dashboard} from "@/pages/dashboard";
+import {Profile} from "@/pages/profile/Profile.tsx";
 import "./index.css";
 
 const ROUTER = createBrowserRouter([
@@ -13,6 +14,10 @@ const ROUTER = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
   },
 ]);
 
