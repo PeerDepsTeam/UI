@@ -8,8 +8,8 @@ export interface Query<R = Record<string, any>> {
 
 // intentionally type query record as 'any' so it is compatible with any filter
 export const DEFAULT_QUERY: Query<any> = {
-  page: 0,
-  pageSize: 500,
+  page: 1,
+  pageSize: 20,
   params: {},
 };
 

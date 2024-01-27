@@ -7,6 +7,7 @@ import {Profile} from "@/pages/profile/Profile.tsx";
 import "./index.css";
 import Login from "./pages/login/Login";
 import {Signup} from "./pages/signup";
+import {Courses} from "./pages/courses";
 
 const ROUTER = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const ROUTER = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />,
+  },
+  {
+    path: "/courses",
+    element: <Courses />,
   },
 ]);
 

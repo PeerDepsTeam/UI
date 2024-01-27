@@ -15,8 +15,9 @@ export const UserProvider: UserProvider = {
     return userApi().getUserById(id);
   },
 
-  getMany(query: Query): Promise<AxiosResponse<User[]>> {
-    return userApi().getUsers(query.page, query.pageSize);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  getMany(_query): Promise<AxiosResponse<User[]>> {
+    return userApi().getUsers();
   },
 
   getExpenses(

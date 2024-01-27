@@ -66,6 +66,11 @@
   }
 }
 
+::-webkit-scrollbar {
+  background-color: aqua;
+  width: 0px;
+}
+
 @layer base {
   * {
     @apply border-border;
