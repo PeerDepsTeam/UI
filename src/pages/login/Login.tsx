@@ -50,7 +50,7 @@ const Login: FC = () => (
             >
               <Link to={"/signup"}>SIGN UP</Link>
             </Button>
-            <div className="flex flex-row justify-center align-middle mb-5">
+            <div className="mb-5 flex flex-row justify-center align-middle">
               <small> OR </small>
             </div>
             <Button
