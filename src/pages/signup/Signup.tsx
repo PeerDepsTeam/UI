@@ -17,9 +17,9 @@ export const Signup: FC = () => {
             width={600}
           ></img>
         </div>
-        <div className="mt-0 lg:p-8 ">
+        <div className="mt-0  lg:p-8">
           <div className="flex w-full flex-col justify-center space-y-6  lg:max-w-lg">
-            <Card className="mx-auto mt-1 max-w-[500px] space-y-6">
+            <Card className="mx-auto mt-1 max-w-[500px] space-y-6 bg-white bg-opacity-50 p-8 backdrop-blur-lg backdrop-filter">
               <CardContent className="mt-6">
                 <div className="mx-auto max-w-[350px] space-y-6">
                   <div className="space-y-2 text-center">
