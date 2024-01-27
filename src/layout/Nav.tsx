@@ -24,12 +24,12 @@ export function Nav({links, isCollapsed}: NavProps) {
   return (
     <div
       data-collapsed={isCollapsed}
-      className="group flex flex-col gap-4 bg-yellow-50 py-2 data-[collapsed=true]:py-2"
+      className="bg-white-50 group flex flex-col gap-4 py-2 data-[collapsed=true]:py-2"
     >
-      <nav className=" flex grid flex-row items-start gap-10 bg-yellow-50 px-2 group-[[data-collapsed=true]]:justify-center group-[[data-collapsed=true]]:px-2">
+      <nav className=" bg-white-50 flex grid flex-row items-start gap-10 px-2 group-[[data-collapsed=true]]:justify-center group-[[data-collapsed=true]]:px-2">
         {links.map((link, index) =>
           isCollapsed ? (
-            <Tooltip key={index} delayDuration={0} cla>
+            <Tooltip key={index} delayDuration={0}>
               <TooltipTrigger asChild>
                 <Link
                   to={link.to}
