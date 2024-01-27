@@ -2,6 +2,7 @@ import {FC} from "react";
 
 import {Separator} from "@/components/ui/separator";
 import {Card, CardContent} from "@/components/ui/card";
+import signupImage from "../../assets/signup.jpeg";
 
 import SignUpForm from "./SignupForm";
 
@@ -11,7 +12,7 @@ export const Signup: FC = () => {
       <div className="container relative  flex-col items-center justify-center bg-yellow-50 md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
         <div className="relative  flex-col items-center justify-center lg:flex">
           <img
-            src="/src/assets/signup.jpeg"
+            src={signupImage}
             alt="image sign up"
             className=""
             width={600}
