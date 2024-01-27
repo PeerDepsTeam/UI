@@ -8,7 +8,7 @@ type CardProps = {
 }
 
 
-export const Cards : FC<CardProps> = ()=>{
+export const Cards : FC<CardProps> = ({ color })=>{
     const [progress, setProgress] = useState(13)
  
     useEffect(() => {
@@ -17,7 +17,7 @@ export const Cards : FC<CardProps> = ()=>{
     }, [])
   
     return(
-        <Card className={`w-[380px]`}>
+        <Card style={{ backgroundColor: color }} className={`w-[380px] text-white`}>
             <CardHeader>
                 <CardTitle className="text-md">Manage your expense</CardTitle>
                 <CardDescription className="text-xs text-light">Managing expenses effectively is an important aspect of personal and financial well-being.</CardDescription>
