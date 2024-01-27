@@ -18,7 +18,7 @@ export const UserNav: FC = () => {
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-14 w-14">
             <AvatarImage src="/avatars/01.png" alt="@shadcn" />
-            <AvatarFallback>SC</AvatarFallback>
+            <AvatarFallback className="bg-purple-300">SC</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
@@ -34,9 +34,13 @@ export const UserNav: FC = () => {
         <DropdownMenuSeparator />
 
         <DropdownMenuGroup>
-          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem>
+            <a href="/profile">Profile</a>
+          </DropdownMenuItem>
 
-          <DropdownMenuItem>Dashboard</DropdownMenuItem>
+          <DropdownMenuItem>
+            <a href="/dashboard">Dashboard</a>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
 
         <DropdownMenuSeparator />
