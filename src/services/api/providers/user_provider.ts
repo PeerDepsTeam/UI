@@ -15,8 +15,8 @@ export const UserProvider: UserProvider = {
     return userApi().getUserById(id);
   },
 
-  getMany(query: Query): Promise<AxiosResponse<User[]>> {
-    return userApi().getUsers(query.page, query.pageSize);
+  getMany(): Promise<AxiosResponse<User[]>> {
+    return userApi().getUsers();
   },
 
   getExpenses(
