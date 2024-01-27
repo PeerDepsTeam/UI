@@ -21,9 +21,9 @@ const ROUTER = createBrowserRouter([
     element: <Profile />,
   },
   {
-    path: '/signin',
-    element: <Login/>,
-  }
+    path: "/signin",
+    element: <Login />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
