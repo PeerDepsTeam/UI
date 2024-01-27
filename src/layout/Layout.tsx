@@ -1,9 +1,13 @@
 import {FC, PropsWithChildren, ReactNode} from "react";
-import {LayoutDashboard} from "lucide-react";
+import {Home, LayoutDashboard} from "lucide-react";
 import {clsx} from "clsx";
 import {HEADER_HEIGHT, MAIN_HEIGHT} from "@/layout/constants.ts";
 import {DefaultAppBar} from "@/layout/DefaultAppBar.tsx";
 import {Nav} from "@/layout/Nav.tsx";
+import {HomeIcon} from "@/components/icon/HomeIcon";
+import {UserIcon} from "@/components/icon/UserIcon";
+import {BookIcon} from "@/components/icon/BookIcon";
+import {DashboardIcon} from "@/components/icon/DashboardIcon";
 
 export interface LayoutProps {
   header?: ReactNode;
@@ -14,7 +18,7 @@ export interface LayoutProps {
 const HeaderWrapper: FC<PropsWithChildren> = ({children}) => {
   return (
     <div
-      className={clsx("fixed left-0 top-0 mb-[0.5rem] w-full", HEADER_HEIGHT)}
+      className={clsx("fixed left-0 top-0 mb-[0.5rem] w-full ", HEADER_HEIGHT)}
     >
       {children}
     </div>
@@ -29,20 +33,32 @@ const MainWrapper: FC<PropsWithChildren> = ({children}) => {
         height: MAIN_HEIGHT,
       }}
     >
-      <div className="bg-black-20 w-1/4">
+      <div className="w-1/4 bg-yellow-50">
         <Nav
           isCollapsed={false}
           links={[
             {
+              title: "Home",
+              icon: HomeIcon,
+              to: "/",
+              variant: "default",
+            },
+            {
               title: "Dashboard",
-              icon: LayoutDashboard,
+              icon: DashboardIcon,
               to: "/dashboard",
               variant: "default",
             },
             {
               title: "Profile",
-              icon: LayoutDashboard,
+              icon: UserIcon,
               to: "/profile",
+              variant: "default",
+            },
+            {
+              title: "Course",
+              icon: BookIcon,
+              to: "/courses",
               variant: "default",
             },
           ]}
