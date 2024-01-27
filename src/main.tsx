@@ -6,6 +6,7 @@ import {Dashboard} from "@/pages/dashboard";
 import {Profile} from "@/pages/profile/Profile.tsx";
 import "./index.css";
 import Login from "./pages/login/Login";
+import {Signup} from "./pages/signup";
 
 const ROUTER = createBrowserRouter([
   {
@@ -23,6 +24,8 @@ const ROUTER = createBrowserRouter([
   {
     path: "/signin",
     element: <Login />,
+    path: "/signup",
+    element: <Signup />,
   },
 ]);
 
